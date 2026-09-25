@@ -76,10 +76,10 @@ img { display: block; max-width: 100%; }
 }
 .hero__photo img {
   /* foto um pouco mais distante: menor, apoiada embaixo à direita, com o topo esfumado */
-  position: absolute; right: 0; bottom: 0; height: 94%; width: auto; max-width: none;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%), linear-gradient(to right, transparent 0%, #000 34%);
+  position: absolute; right: 0; bottom: 0; height: 99%; width: auto; max-width: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 7%), linear-gradient(to right, transparent 0%, #000 34%);
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to bottom, transparent 0%, #000 12%), linear-gradient(to right, transparent 0%, #000 34%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 7%), linear-gradient(to right, transparent 0%, #000 34%);
   mask-composite: intersect;
   transform-origin: 70% 100%;
   animation: reveal-photo 1.6s var(--ease) both;
