@@ -1,7 +1,7 @@
 /* Dra. Tayna Decot — efeitos e navegação */
 
 // Número do WhatsApp do consultório (só dígitos, com 55 + DDD)
-const WHATSAPP = '5500000000000';
+const WHATSAPP = '5521976686448';
 
 (() => {
   const root = document.documentElement;

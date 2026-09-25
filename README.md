@@ -19,8 +19,10 @@ A animação do dente aparece na primeira visita; a navegação entre telas usa 
 - `tayna.jpg` — foto vertical da Dra., fundo claro (ela se funde no creme pela esquerda e por baixo).
 - `btn-agendar.jpg`, `btn-tratamentos.jpg`, `btn-sobre.jpg`, `btn-contato.jpg` — fotos de fundo dos botões. Sem elas, os botões ficam em vinho com um ramo desenhado.
 
-## Trocar (dados provisórios)
-- WhatsApp: constante `WHATSAPP` no topo de `script.js`, e o número exibido em `contato.html`.
-- CRO, endereço, horários, e-mail e Instagram: procure `CRO-XX 00000`, `Rua Exemplo`, `contato@` e `instagram.com/` nas páginas.
-- Formação em `sobre.html` e tempos/sessões em `tratamentos.html`: confirmar com a Dra.
-- Fotos: tratamentos (`assets/img/trat-*.jpg`), sobre (`tayna-sobre.jpg`) e consultório (`consultorio-1..3.jpg`).
+## Dados da Dra.
+- CRO-RJ 057551 · WhatsApp (21) 97668-6448 (constante `WHATSAPP` em `script.js`) · Instagram @DraTaynaDecot.
+- Tratamentos organizados em 7 áreas a partir da lista enviada por ela (`tratamentos.html`).
+
+## Ainda falta
+- E-mail, endereço completo e horários (por enquanto as páginas indicam "Consulte pelo WhatsApp").
+- Fotos: `tayna.jpg` (tela inicial), `tayna-sobre.jpg`, `consultorio-1..3.jpg` e uma por área em `trat-{avaliacao,prevencao,restauracoes,clareamento,gengiva,cirurgia,proteses}.jpg`, todas em `assets/img/`.
