@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Sobre mim — Dra. Tayna Decot</title>
+  <meta name="description" content="Conheça a Dra. Tayna Decot, cirurgiã-dentista: formação, jeito de cuidar e o consultório.">
   <meta name="theme-color" content="#f5efe9">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,15 +12,70 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <script>document.documentElement.classList.add('flash-in');</script>
   <div class="page-cover" aria-hidden="true"></div>
-  <!-- Tela provisória: conteúdo a planejar -->
-  <main class="app stub">
-    <a class="stub__back" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Voltar</a>
-    <div class="stub__body">
-      <h1 class="stub__title">Sobre mim</h1>
-      <p class="stub__text">Esta tela está sendo preparada com carinho.</p>
-      <p class="stub__sign">Tayna Decot</p>
-    </div>
+  <main class="app page" id="sobre">
+    <header class="page__top">
+      <a class="page__back" href="index.html" data-flash><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Início</a>
+      <span class="page__sign">Tayna Decot</span>
+    </header>
+
+    <section class="page__head">
+      <p class="hero__pre">Dra. Tayna Decot</p>
+      <h1 class="page__title">Sobre <em>mim</em></h1>
+      <span class="hero__rule" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 .5l3 4.5-3 4.5-3-4.5z"/></svg></span>
+      <p class="page__intro">Cirurgiã-dentista dedicada à odontologia estética, com atendimento próximo e cuidadoso.</p>
+    </section>
+
+    <section class="section">
+      <div class="about__photo reveal"><figure class="photo photo--arch"><img src="assets/img/tayna-sobre.jpg" alt="Foto da Dra. no consultório" loading="lazy" onerror="this.parentElement.classList.add('is-empty'); this.remove()"><figcaption class="photo__empty">Foto da Dra. no consultório<small>assets/img/tayna-sobre.jpg</small></figcaption></figure></div>
+    </section>
+
+    <section class="section reveal">
+      <p class="section__label">Quem sou</p>
+      <h2 class="section__title">Olá, eu sou a Tayna</h2>
+      <p>Sou cirurgiã-dentista e trabalho com odontologia estética. Acredito que um sorriso bonito é aquele que continua parecendo seu, por isso cada tratamento começa entendendo a sua história e o que você espera.</p>
+      <p>No consultório, o atendimento é individual e com hora marcada. Explico cada etapa com calma, mostro o planejamento antes de começar e acompanho você até o resultado final.</p>
+    </section>
+
+    <blockquote class="quote reveal">“Cuidar de um sorriso é cuidar da confiança de alguém.”</blockquote>
+
+    <section class="section reveal">
+      <p class="section__label">Meu jeito de cuidar</p>
+      <div class="values">
+        <div class="value"><span class="value__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 13c1.2 1.6 2.5 2.3 4 2.3s2.8-.7 4-2.3M9 9.5h.01M15 9.5h.01"/></svg></span><div><h3>Escuta</h3><p>Cada consulta começa ouvindo o que você sente e o que deseja.</p></div></div><div class="value"><span class="value__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-5-3-8-7-8-11a8 8 0 0 1 16 0c0 4-3 8-8 11z"/><path d="M12 7v8M9 11h6"/></svg></span><div><h3>Naturalidade</h3><p>Sorrisos que combinam com o seu rosto e a sua personalidade.</p></div></div><div class="value"><span class="value__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></span><div><h3>Técnica</h3><p>Planejamento digital e materiais de alta qualidade em cada etapa.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <p class="section__label">Formação</p>
+      <ol class="steps">
+        <li><span class="steps__dot">1</span><div><h3>Graduação em Odontologia</h3><p>Instituição · Ano</p></div></li><li><span class="steps__dot">2</span><div><h3>Especialização em Dentística / Estética</h3><p>Instituição · Ano</p></div></li><li><span class="steps__dot">3</span><div><h3>Cursos de lentes de contato e facetas</h3><p>Instituição · Ano</p></div></li><li><span class="steps__dot">4</span><div><h3>Atualização em odontologia digital</h3><p>Congressos e cursos contínuos</p></div></li>
+      </ol>
+    </section>
+
+    <section class="section reveal">
+      <p class="section__label">O consultório</p>
+      <div class="gallery">
+        <figure class="photo"><img src="assets/img/consultorio-1.jpg" alt="Recepção" loading="lazy" onerror="this.parentElement.classList.add('is-empty'); this.remove()"><figcaption class="photo__empty">Recepção<small>assets/img/consultorio-1.jpg</small></figcaption></figure>
+        <figure class="photo"><img src="assets/img/consultorio-2.jpg" alt="Sala de atendimento" loading="lazy" onerror="this.parentElement.classList.add('is-empty'); this.remove()"><figcaption class="photo__empty">Sala de atendimento<small>assets/img/consultorio-2.jpg</small></figcaption></figure>
+        <figure class="photo"><img src="assets/img/consultorio-3.jpg" alt="Detalhes" loading="lazy" onerror="this.parentElement.classList.add('is-empty'); this.remove()"><figcaption class="photo__empty">Detalhes<small>assets/img/consultorio-3.jpg</small></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta-card reveal">
+        <h2>Vamos conversar sobre o seu sorriso?</h2>
+        <p>Agende uma avaliação e conheça o consultório.</p>
+        <a class="btn-line" href="agendar.html" data-flash>Agendar avaliação <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p class="foot__sign">Tayna Decot</p>
+      <p class="foot__copy">CRO-XX 00000 · © <span data-year></span></p>
+    </footer>
   </main>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Agende sua consulta — Dra. Tayna Decot</title>
+  <meta name="description" content="Agende sua consulta com a Dra. Tayna Decot pelo WhatsApp.">
   <meta name="theme-color" content="#f5efe9">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,15 +12,63 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <script>document.documentElement.classList.add('flash-in');</script>
   <div class="page-cover" aria-hidden="true"></div>
-  <!-- Tela provisória: conteúdo a planejar -->
-  <main class="app stub">
-    <a class="stub__back" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Voltar</a>
-    <div class="stub__body">
-      <h1 class="stub__title">Agende sua consulta</h1>
-      <p class="stub__text">Esta tela está sendo preparada com carinho.</p>
-      <p class="stub__sign">Tayna Decot</p>
-    </div>
+  <main class="app page" id="agendar">
+    <header class="page__top">
+      <a class="page__back" href="index.html" data-flash><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Início</a>
+      <span class="page__sign">Tayna Decot</span>
+    </header>
+
+    <section class="page__head">
+      <p class="hero__pre">Hora marcada</p>
+      <h1 class="page__title">Agende sua <em>consulta</em></h1>
+      <span class="hero__rule" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M5 .5l3 4.5-3 4.5-3-4.5z"/></svg></span>
+      <p class="page__intro">Escolha o que deseja e envie seus dados. A primeira consulta é uma avaliação completa do seu sorriso.</p>
+    </section>
+
+    <section class="section reveal">
+      <p class="section__label">Como funciona</p>
+      <ol class="steps">
+        <li><span class="steps__dot">1</span><div><h3>Preencha seus dados</h3><p>Leva menos de um minuto.</p></div></li><li><span class="steps__dot">2</span><div><h3>Envie pelo WhatsApp</h3><p>A mensagem já vai pronta para o consultório.</p></div></li><li><span class="steps__dot">3</span><div><h3>Confirme o horário</h3><p>Respondemos com os horários disponíveis para você.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="section reveal">
+      <p class="section__label">Seus dados</p>
+      <form class="form" id="agenda-form" novalidate>
+        <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" autocomplete="name" placeholder="Como você se chama?" required></div>
+        <div class="field"><label for="f-tel">Telefone / WhatsApp</label><input id="f-tel" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" required></div>
+        <div class="field"><label for="f-trat">Tenho interesse em</label>
+          <select id="f-trat" name="tratamento"><option>Avaliação</option><option>Lentes de contato dental</option><option>Clareamento dental</option><option>Facetas em resina</option><option>Alinhadores invisíveis</option><option>Implantes dentários</option><option>Limpeza e prevenção</option><option>Outro</option></select>
+        </div>
+        <fieldset class="field">
+          <legend>Melhor período</legend>
+          <div class="options">
+            <input type="radio" id="p-manha" name="periodo" value="Manhã" checked><label for="p-manha">Manhã</label>
+            <input type="radio" id="p-tarde" name="periodo" value="Tarde"><label for="p-tarde">Tarde</label>
+            <input type="radio" id="p-noite" name="periodo" value="Fim do dia"><label for="p-noite">Fim do dia</label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="f-msg">Observação (opcional)</label><textarea id="f-msg" name="mensagem" placeholder="Conte o que você gostaria de melhorar no seu sorriso"></textarea></div>
+        <button class="btn-wine btn-block" type="submit">Enviar pelo WhatsApp <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 0 1-12.4 7.5L3.5 20.5l1-4.4A8.5 8.5 0 1 1 20.5 12z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.5-1.8-1.3-2.3-2.3l.8-1-1-2z"/></svg></button>
+        <p class="form__status" id="agenda-status" role="status"></p>
+      </form>
+    </section>
+
+    <section class="section reveal">
+      <p class="section__label">Consultório</p>
+      <div class="info">
+        <div class="info__row"><span class="info__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><small>Endereço</small><strong>Rua Exemplo, 000 · Sala 00 · Cidade/UF</strong></div><span></span></div>
+        <div class="info__row"><span class="info__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small>Atendimento</small><strong>Segunda a sexta · 9h às 19h</strong></div><span></span></div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p class="foot__sign">Tayna Decot</p>
+      <p class="foot__copy">CRO-XX 00000 · © <span data-year></span></p>
+    </footer>
   </main>
+  <script src="script.js"></script>
 </body>
 </html>
