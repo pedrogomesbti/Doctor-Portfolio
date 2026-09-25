@@ -8,7 +8,7 @@
   const finishLoading = () => {
     root.classList.remove('is-loading');
     root.classList.add('is-loaded');
-    if (loader) setTimeout(() => loader.remove(), 1000);
+    if (loader) setTimeout(() => loader.remove(), 1200);
   };
   if (!loader || reduced) finishLoading();
   else {
@@ -18,7 +18,17 @@
       if (started) return;
       started = true;
       loader.classList.add('is-run');
-      setTimeout(finishLoading, 2300);
+      // contador acompanha o vinho subindo no dente (0,55s a 2,25s)
+      const pct = document.getElementById('loader-pct');
+      const t0 = performance.now() + 550, dur = 1700;
+      const tick = now => {
+        const p = Math.min(Math.max((now - t0) / dur, 0), 1);
+        const eased = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+        if (pct) pct.textContent = Math.round(eased * 100);
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      setTimeout(finishLoading, 2900);
     };
     if (document.readyState === 'complete') requestAnimationFrame(start);
     else addEventListener('load', () => requestAnimationFrame(start));

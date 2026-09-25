@@ -14,21 +14,26 @@
 <body>
   <script>document.documentElement.classList.add('is-loading');</script>
 
-  <!-- Tela de carregamento: dente em traço dourado -->
+  <!-- Tela de carregamento: dente que se enche de vinho -->
   <div class="loader" aria-hidden="true">
-    <svg class="loader__art" viewBox="0 0 120 140">
-      <defs>
-        <clipPath id="tooth-clip"><path d="M60 20c-9-9-35-13-41 9-5 19 5 32 9 49 4 17 5 37 13 37 8 0 8-27 19-27s11 27 19 27c8 0 9-20 13-37 4-17 14-30 9-49-6-22-32-18-41-9z"/></clipPath>
-        <linearGradient id="glint" x1="0" x2="1"><stop offset="0" stop-color="#f3dfbf" stop-opacity="0"/><stop offset=".5" stop-color="#f3dfbf" stop-opacity=".55"/><stop offset="1" stop-color="#f3dfbf" stop-opacity="0"/></linearGradient>
-      </defs>
-      <path class="loader__tooth" d="M60 20c-9-9-35-13-41 9-5 19 5 32 9 49 4 17 5 37 13 37 8 0 8-27 19-27s11 27 19 27c8 0 9-20 13-37 4-17 14-30 9-49-6-22-32-18-41-9z"/>
-      <path class="loader__inner" d="M44 40c6-5 26-5 32 0"/>
-      <g clip-path="url(#tooth-clip)"><rect class="loader__glint" x="-50" y="0" width="40" height="140" fill="url(#glint)"/></g>
-    </svg>
-    <svg class="loader__spark" viewBox="0 0 20 20"><path d="M10 0c.8 5 4.2 8.2 10 10-5.8 1.8-9.2 5-10 10-.8-5-4.2-8.2-10-10 5.8-1.8 9.2-5 10-10z"/></svg>
+    <span class="loader__blob loader__blob--a"></span>
+    <span class="loader__blob loader__blob--b"></span>
+    <div class="loader__stage">
+      <svg class="loader__art" viewBox="0 0 120 140">
+        <defs><clipPath id="tooth-clip"><path d="M60 20c-9-9-35-13-41 9-5 19 5 32 9 49 4 17 5 37 13 37 8 0 8-27 19-27s11 27 19 27c8 0 9-20 13-37 4-17 14-30 9-49-6-22-32-18-41-9z"/></clipPath></defs>
+        <g clip-path="url(#tooth-clip)">
+          <g class="loader__fill"><path class="loader__wave loader__wave--back" d="M-120 8q15-8 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0V200H-120z"/><path class="loader__wave" d="M-120 8q15-8 30 0t30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0 30 0V200H-120z"/></g>
+        </g>
+        <path class="loader__tooth" d="M60 20c-9-9-35-13-41 9-5 19 5 32 9 49 4 17 5 37 13 37 8 0 8-27 19-27s11 27 19 27c8 0 9-20 13-37 4-17 14-30 9-49-6-22-32-18-41-9z"/>
+        <path class="loader__inner" d="M44 40c6-5 26-5 32 0"/>
+      </svg>
+      <svg class="loader__spark" viewBox="0 0 20 20"><path d="M10 0c.8 5 4.2 8.2 10 10-5.8 1.8-9.2 5-10 10-.8-5-4.2-8.2-10-10 5.8-1.8 9.2-5 10-10z"/></svg>
+    </div>
     <span class="loader__name">Tayna Decot</span>
     <span class="loader__line"></span>
+    <span class="loader__count"><span id="loader-pct">0</span>%</span>
   </div>
+
   <main class="app">
 
     <!-- Topo: nome + foto -->

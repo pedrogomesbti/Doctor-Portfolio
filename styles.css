@@ -239,27 +239,45 @@ img { display: block; max-width: 100%; }
 
 /* ---------- tela de carregamento ---------- */
 .loader {
-  position: fixed; inset: 0; z-index: 100;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
-  background: radial-gradient(120% 80% at 50% 40%, #5c1d2b, #2c0b13 75%);
-  color: var(--gold);
-  clip-path: inset(0 0 0 0);
-  transition: clip-path 1s cubic-bezier(.77, 0, .18, 1);
+  position: fixed; inset: 0; z-index: 100; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+  background: #fcfaf8; color: var(--wine);
+  clip-path: circle(150% at 50% 44%);
+  transition: clip-path 1.1s cubic-bezier(.77, 0, .18, 1);
 }
-.is-loaded .loader { clip-path: inset(0 0 100% 0); }
-.loader__art { position: relative; width: 92px; overflow: visible; transition: transform 1s var(--ease), opacity .6s; }
-.is-loaded .loader__art { transform: translateY(-30px) scale(.9); opacity: 0; }
-.loader__tooth, .loader__inner { fill: none; stroke: var(--gold); stroke-width: .9; stroke-linecap: round; stroke-linejoin: round; }
-.loader__tooth { stroke-dasharray: 460; stroke-dashoffset: 460; animation: draw 1.3s .1s var(--ease) forwards; }
-.loader__inner { stroke-width: .7; opacity: .7; stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw .6s 1s var(--ease) forwards; }
-.loader__glint { transform: skewX(-18deg); animation: glint 1s 1s var(--ease) forwards; }
-@keyframes glint { to { transform: translateX(170px) skewX(-18deg); } }
-.loader__spark { position: absolute; width: 16px; margin: -86px 0 0 82px; fill: #f3dfbf; opacity: 0; transform: scale(0); animation: spark .9s 1.3s var(--ease) forwards; }
-@keyframes spark { 50% { opacity: 1; transform: scale(1.15) rotate(45deg); } to { opacity: .9; transform: scale(.9) rotate(90deg); } }
-.loader__name { font-family: var(--script); font-size: 34px; line-height: 1; color: #e9d3b0; opacity: 0; animation: rise .8s .6s var(--ease) forwards; }
-.loader__line { width: 90px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); transform: scaleX(0); animation: grow-in 1.2s .7s var(--ease) forwards; }
+/* saída: a tela se fecha em círculo para dentro do dente */
+.is-loaded .loader { clip-path: circle(0% at 50% 44%); }
+/* luzes suaves que se movem ao fundo */
+.loader__blob { position: absolute; width: 70vmax; height: 70vmax; border-radius: 50%; filter: blur(60px); opacity: .55; }
+.loader__blob--a { left: -30vmax; top: -30vmax; background: radial-gradient(circle, #f1d9d9, transparent 65%); animation: drift-a 9s ease-in-out infinite alternate; }
+.loader__blob--b { right: -32vmax; bottom: -32vmax; background: radial-gradient(circle, #efdfc6, transparent 65%); animation: drift-b 11s ease-in-out infinite alternate; }
+@keyframes drift-a { to { transform: translate(18vmax, 14vmax) scale(1.1); } }
+@keyframes drift-b { to { transform: translate(-16vmax, -12vmax) scale(1.15); } }
+
+.loader__stage { position: relative; z-index: 1; transition: transform 1s var(--ease); }
+.is-loaded .loader__stage { transform: scale(.85); }
+.loader__art { width: 96px; overflow: visible; filter: drop-shadow(0 14px 24px rgba(92, 29, 43, .18)); }
+.loader__tooth, .loader__inner { fill: none; stroke: var(--wine); stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+.loader__tooth { stroke-dasharray: 460; stroke-dashoffset: 460; animation: draw 1.1s .1s var(--ease) forwards; }
+.loader__inner { stroke: #f3dfdf; stroke-width: 1; opacity: 0; stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw .6s 2s var(--ease) forwards, fade-in .1s 2s forwards; }
+@keyframes fade-in { to { opacity: .9; } }
+/* o vinho sobe dentro do dente, com onda */
+.loader__fill { transform: translateY(142px); animation: fill-up 1.7s .55s cubic-bezier(.45, 0, .2, 1) forwards; }
+@keyframes fill-up { to { transform: translateY(8px); } }
+.loader__wave { fill: var(--wine); animation: wave 1.2s linear infinite; }
+.loader__wave--back { fill: #8a3a4b; opacity: .6; animation-duration: 1.9s; animation-direction: reverse; transform: translateY(-3px); }
+@keyframes wave { to { transform: translateX(60px); } }
+.loader__wave--back { animation-name: wave-back; }
+@keyframes wave-back { from { transform: translate(0, -3px); } to { transform: translate(60px, -3px); } }
+
+.loader__spark { position: absolute; right: -14px; top: -8px; width: 18px; fill: var(--gold); opacity: 0; transform: scale(0); animation: spark .9s 2.2s var(--ease) forwards; }
+@keyframes spark { 50% { opacity: 1; transform: scale(1.2) rotate(45deg); } to { opacity: 1; transform: scale(.9) rotate(90deg); } }
+.loader__name { position: relative; z-index: 1; margin-top: 6px; font-family: var(--script); font-size: 38px; line-height: 1; color: var(--wine); opacity: 0; animation: rise .8s .5s var(--ease) forwards; }
+.loader__line { position: relative; z-index: 1; width: 96px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); transform: scaleX(0); animation: grow-in 1.2s .7s var(--ease) forwards; }
 @keyframes grow-in { to { transform: scaleX(1); } }
+.loader__count { position: relative; z-index: 1; font-family: var(--serif); font-size: 15px; letter-spacing: .2em; color: var(--muted); font-variant-numeric: tabular-nums; opacity: 0; animation: rise .6s .6s var(--ease) forwards; }
 .loader:not(.is-run) * { animation-play-state: paused !important; }
+.loader__blob { animation-play-state: running !important; }
 /* a página só começa a se animar quando a tela de carregamento sai */
 .is-loading .app, .is-loading .app *, .is-loading .app *::before, .is-loading .app *::after { animation-play-state: paused !important; }
 
