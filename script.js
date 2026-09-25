@@ -155,7 +155,26 @@ const WHATSAPP = '5521976686448';
     });
   }
 
-  /* ---------- 7. Surgir ao rolar ---------- */
+  /* ---------- 7. Vídeos rodando sozinhos, sem precisar tocar ---------- */
+  const videos = [...document.querySelectorAll('video')];
+  const playVideo = v => { v.muted = true; v.playsInline = true; const p = v.play(); if (p) p.catch(() => {}); };
+  videos.forEach(v => {
+    v.muted = true;
+    v.setAttribute('muted', '');
+    if (v.readyState >= 2) playVideo(v); else v.addEventListener('canplay', () => playVideo(v), { once: true });
+  });
+  if (videos.length && 'IntersectionObserver' in window) {
+    const vio = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) playVideo(en.target); else en.target.pause();
+    }), { threshold: .15 });
+    videos.forEach(v => vio.observe(v));
+  }
+  // alguns celulares (ex.: iPhone em modo economia de bateria) só liberam depois do primeiro toque na página
+  const wake = () => videos.forEach(v => { if (v.paused) playVideo(v); });
+  ['touchstart', 'pointerdown', 'scroll'].forEach(ev => addEventListener(ev, wake, { once: true, passive: true }));
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) wake(); });
+
+  /* ---------- 8. Surgir ao rolar ---------- */
   const items = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduced) {
     root.classList.add('io');

@@ -369,12 +369,17 @@ img { display: block; max-width: 100%; }
 .photo__empty { display: none; }
 .photo.is-empty .photo__empty { position: absolute; inset: 0; display: grid; place-content: center; gap: 6px; text-align: center; padding: 20px; font-family: var(--serif); font-style: italic; font-size: 18px; color: #7d5d62; }
 .photo__empty small { font-family: var(--sans); font-style: normal; font-size: 10.5px; letter-spacing: .04em; opacity: .8; }
-.photo--wide { aspect-ratio: 16 / 9; }
+.photo--wide { aspect-ratio: 4 / 3; }
 .photo--natural { aspect-ratio: auto; background: none; }
 .photo--natural img { height: auto; }
 .photo video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .photo__cap { position: absolute; left: 14px; bottom: 12px; z-index: 1; padding: 4px 10px; border-radius: 999px; background: rgba(63, 17, 28, .55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: #f5efe9; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; }
-.gallery--cases { margin-top: 12px; }
+.gallery--cases { margin-top: 12px; grid-auto-columns: 78%; }
+.gallery--cases .photo { aspect-ratio: 1 / 1; }
+.gallery--cases .photo--video { aspect-ratio: 3 / 4; }
+/* vídeos são decorativos: sem controles nem botão de play */
+.photo video { pointer-events: none; }
+video::-webkit-media-controls, video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
 .swipe-hint { margin: 8px 0 0 !important; text-align: right; font-family: var(--serif); font-style: italic; font-size: 14px !important; color: var(--gold) !important; }
 .treat { gap: 12px; }
 .fold__gap { margin-top: 18px !important; }
