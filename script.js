@@ -56,25 +56,23 @@
   }, { threshold: .6 });
   document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
 
-  // Rolagem: barra de progresso, parallax, nav que se esconde, timeline
-  const progress = document.querySelector('.progress');
-  const nav = document.querySelector('.nav');
+  // Rolagem: progresso na navbar lateral, parallax, timeline
+  const progress = document.querySelector('.sidebar__progress');
+  const topbar = document.querySelector('.topbar');
+  const heroEl = document.querySelector('.hero');
   const words = document.querySelectorAll('[data-parallax]');
   const person = document.querySelector('[data-parallax-person]');
-  const hero = document.querySelector('.hero');
   const line = document.querySelector('.timeline__line span');
   const timeline = document.querySelector('.timeline');
-  let lastY = 0, ticking = false;
+  let ticking = false;
   const onScroll = () => {
     const y = window.scrollY, max = document.body.scrollHeight - innerHeight;
-    progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+    progress.style.setProperty('--p', max > 0 ? y / max : 0);
+    topbar.classList.toggle('is-solid', y > heroEl.offsetHeight - 80);
     if (!reduced && y < innerHeight * 1.5) {
       words.forEach(w => w.style.setProperty('--py', `${y * +w.dataset.parallax}px`));
       if (person) person.style.setProperty('--ppy', `${y * -.06}px`);
     }
-    nav.classList.toggle('pre', innerWidth > 980 && y < hero.offsetHeight - 160);
-    nav.classList.toggle('hide', y > lastY && y > hero.offsetHeight && !navLinks.classList.contains('open'));
-    lastY = y;
     if (line && timeline) {
       const r = timeline.getBoundingClientRect();
       const p = Math.min(Math.max((innerHeight * .8 - r.top) / (r.height + innerHeight * .3), 0), 1);
@@ -83,29 +81,29 @@
     ticking = false;
   };
   window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(onScroll); ticking = true; } }, { passive: true });
-  window.addEventListener('resize', onScroll);
-  requestAnimationFrame(onScroll);
+  onScroll();
 
-  // Link ativo
-  const navLinks = document.querySelector('.nav__links');
-  const links = [...navLinks.querySelectorAll('a')];
+  // Navbar lateral: link ativo + indicador deslizante
+  const sideNav = document.querySelector('.sidebar__nav');
+  const indicator = sideNav.querySelector('.sidebar__indicator');
+  const links = [...sideNav.querySelectorAll('a')];
+  const topLinks = [...document.querySelectorAll('.topbar__links a')];
+  const moveIndicator = a => {
+    links.forEach(l => l.classList.toggle('is-active', l === a));
+    indicator.style.setProperty('--iy', `${a.offsetTop}px`);
+    indicator.style.setProperty('--ix', `${a.offsetLeft}px`);
+  };
   const secIO = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${e.target.id}`));
+      if (!e.isIntersecting) return;
+      const a = links.find(l => l.getAttribute('href') === `#${e.target.id}`);
+      if (a) moveIndicator(a);
+      topLinks.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === `#${e.target.id}`));
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
   document.querySelectorAll('main section[id]').forEach(s => secIO.observe(s));
-
-  // Menu mobile
-  const burger = document.querySelector('.burger');
-  burger.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
-  });
-  links.forEach(a => a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    burger.setAttribute('aria-expanded', false);
-  }));
+  window.addEventListener('resize', () => moveIndicator(sideNav.querySelector('a.is-active') || links[0]));
+  moveIndicator(links[0]);
 
   // Brilho que segue o cursor
   const glow = document.querySelector('.cursor-glow');
