@@ -259,6 +259,7 @@ img { display: block; max-width: 100%; }
 .loader__name { font-family: var(--script); font-size: 34px; line-height: 1; color: #e9d3b0; opacity: 0; animation: rise .8s .6s var(--ease) forwards; }
 .loader__line { width: 90px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); transform: scaleX(0); animation: grow-in 1.2s .7s var(--ease) forwards; }
 @keyframes grow-in { to { transform: scaleX(1); } }
+.loader:not(.is-run) * { animation-play-state: paused !important; }
 /* a página só começa a se animar quando a tela de carregamento sai */
 .is-loading .app, .is-loading .app *, .is-loading .app *::before, .is-loading .app *::after { animation-play-state: paused !important; }
 

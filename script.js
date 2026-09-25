@@ -11,7 +11,19 @@
     if (loader) setTimeout(() => loader.remove(), 1000);
   };
   if (!loader || reduced) finishLoading();
-  else setTimeout(finishLoading, 1900);
+  else {
+    // só começa quando a página terminou de carregar, para a animação ser vista inteira
+    let started = false;
+    const start = () => {
+      if (started) return;
+      started = true;
+      loader.classList.add('is-run');
+      setTimeout(finishLoading, 2300);
+    };
+    if (document.readyState === 'complete') requestAnimationFrame(start);
+    else addEventListener('load', () => requestAnimationFrame(start));
+    setTimeout(start, 4000); // se alguma fonte demorar demais, segue mesmo assim
+  }
 
   // 2, 3 e 4. Botões 3D: inclinação, brilho dourado e ícone flutuante
   const cards = [...document.querySelectorAll('.link')];
