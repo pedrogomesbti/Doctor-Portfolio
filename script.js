@@ -8,7 +8,7 @@
   const finishLoading = () => {
     root.classList.remove('is-loading');
     root.classList.add('is-loaded');
-    if (loader) setTimeout(() => loader.remove(), 1200);
+    if (loader) setTimeout(() => loader.remove(), 1600);
   };
   if (!loader || reduced) finishLoading();
   else {

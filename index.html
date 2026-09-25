@@ -12,12 +12,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <script>document.documentElement.classList.add('is-loading');</script>
+  <script>document.documentElement.classList.add('is-loading', 'intro');</script>
 
   <!-- Tela de carregamento: dente que se enche de vinho -->
   <div class="loader" aria-hidden="true">
     <span class="loader__blob loader__blob--a"></span>
     <span class="loader__blob loader__blob--b"></span>
+    <span class="loader__flash"></span>
     <div class="loader__stage">
       <svg class="loader__art" viewBox="0 0 120 140">
         <defs><clipPath id="tooth-clip"><path d="M60 20c-9-9-35-13-41 9-5 19 5 32 9 49 4 17 5 37 13 37 8 0 8-27 19-27s11 27 19 27c8 0 9-20 13-37 4-17 14-30 9-49-6-22-32-18-41-9z"/></clipPath></defs>
