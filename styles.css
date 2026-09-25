@@ -377,6 +377,7 @@ body.loaded .loader { opacity: 0; visibility: hidden; }
 @media (max-width: 640px) {
   .brand__text small { display: none; }
   .hero { padding-top: 120px; }
+  .hero__wordmark { top: 330px; }
   .chip--a { left: -8px; } .chip--b { right: -8px; }
   .hero__stats { grid-template-columns: 1fr; padding: var(--space-6); }
   .hero__stats li + li { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: var(--space-4); }
