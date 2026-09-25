@@ -242,17 +242,17 @@ img { display: block; max-width: 100%; }
   position: fixed; inset: 0; z-index: 100; overflow: hidden;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
   background: #fcfaf8; color: var(--wine);
-  transition: opacity .9s .55s ease;
+  transition: opacity 1s .4s ease;
 }
-/* saída: um flash de luz nasce do dente, toma a tela e se dissolve */
+/* saída: flash de luz branca que se dissolve revelando o site */
 .is-loaded .loader { opacity: 0; }
 .loader__flash {
-  position: absolute; z-index: 2; left: 50%; top: 44%; width: 60px; height: 60px; margin: -30px 0 0 -30px; border-radius: 50%;
-  background: radial-gradient(circle, #fff 0%, #fffaf2 35%, rgba(247, 230, 204, .8) 55%, rgba(255, 255, 255, 0) 72%);
-  transform: scale(0); pointer-events: none;
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: #fff; opacity: 0;
 }
-.is-loaded .loader__flash { animation: flash .9s cubic-bezier(.2, .7, .1, 1) forwards; }
-@keyframes flash { 0% { transform: scale(0); } 35% { transform: scale(6); } 100% { transform: scale(40); } }
+/* flash: a tela estoura em branco num instante e depois a luz se dissolve */
+.is-loaded .loader__flash { animation: flash .5s ease-out forwards; }
+@keyframes flash { 0% { opacity: 0; } 25% { opacity: 1; } 100% { opacity: 1; } }
 .loader__name, .loader__line, .loader__count { transition: opacity .3s; }
 .is-loaded .loader__name, .is-loaded .loader__line, .is-loaded .loader__count { opacity: 0 !important; }
 /* luzes suaves que se movem ao fundo */
@@ -287,8 +287,8 @@ img { display: block; max-width: 100%; }
 .loader:not(.is-run) * { animation-play-state: paused !important; }
 .loader__blob { animation-play-state: running !important; }
 /* o site surge da luz: claro e desfocado para nítido */
-.intro .app { animation: from-light 1.3s .35s var(--ease) backwards; }
-@keyframes from-light { from { filter: brightness(1.5) blur(10px); transform: scale(1.03); } }
+.intro .app { animation: from-light 1.4s .3s var(--ease) backwards; }
+@keyframes from-light { from { filter: brightness(1.8) blur(8px); transform: scale(1.02); } }
 
 /* a página só começa a se animar quando a tela de carregamento sai */
 .is-loading .app, .is-loading .app *, .is-loading .app *::before, .is-loading .app *::after { animation-play-state: paused !important; }
