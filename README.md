@@ -1,11 +1,16 @@
-# Dra. Tayna Decot — Portfólio digital
+# Dra. Tayna Decot — site
 
-Site de página única para a Dra. Tayna Decot (odontologia estética), inspirado no layout "Aesthetics" com visual mais digital: glassmorphism, linhas topográficas animadas, escaneamento 3D no retrato, contadores, cards com inclinação 3D, botões magnéticos, comparador antes/depois, timeline animada, tema claro/escuro.
+Site mobile-first no estilo "cartão de links": tela inicial com nome, foto e quatro botões que levam a telas internas.
 
 Abra `index.html` no navegador — não precisa de build.
 
-## Personalize
-- Foto: `assets/img/tayna.jpg` (retrato vertical 4:5).
-- WhatsApp, Instagram, endereço, e-mail e CRO: procure `5500000000000`, `CRO-XX 00000` e `Rua Exemplo` em `index.html`.
-- Antes/depois: substitua as ilustrações por fotos reais de casos (com autorização).
-- Números do hero: atributos `data-count`.
+## Telas
+- `index.html` — tela inicial (pronta).
+- `agendar.html`, `tratamentos.html`, `sobre.html`, `contato.html` — provisórias, a planejar.
+
+## Imagens (opcionais, em `assets/img/`)
+- `tayna.jpg` — foto vertical da Dra., fundo claro (ela se funde no creme pela esquerda e por baixo).
+- `btn-agendar.jpg`, `btn-tratamentos.jpg`, `btn-sobre.jpg`, `btn-contato.jpg` — fotos de fundo dos botões (consultório, detalhes, plantas). Sem elas, os botões ficam em verde-sálvia com um ramo desenhado.
+
+## Trocar
+- CRO e WhatsApp: procure `CRO-XX 00000` e `5500000000000` em `index.html`.
