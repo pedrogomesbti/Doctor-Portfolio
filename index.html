@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#3d5c63">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -69,99 +69,56 @@
       <a href="#contato">Contato</a>
     </nav>
     <div class="topbar__actions">
-      <span class="status"><span class="dot"></span>Agenda aberta</span>
-      <a class="btn btn--light btn--sm magnetic" href="#contato">Agendar
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
+      <a class="topbar__phone" href="#contato">+55 00 00000-0000</a>
+      <a class="btn-classic btn-classic--sm" href="#contato">Agendar</a>
     </div>
   </header>
 
   <main>
-    <!-- HERO — portfólio -->
+    <!-- HERO — clássico -->
     <section class="hero" id="inicio">
-      <svg class="topo" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <g fill="none" stroke="currentColor" stroke-width="1">
-          <path d="M-50 700c180-60 260 40 420-20s220-160 400-120 260 120 480 60"/>
-          <path d="M-50 660c180-60 260 40 420-20s220-160 400-120 260 120 480 60"/>
-          <path d="M-50 620c200-80 280 20 440-40s200-150 380-110 280 110 480 50"/>
-          <path d="M-50 580c200-80 280 20 440-40s200-150 380-110 280 110 480 50"/>
-          <path d="M-50 540c220-90 300 10 460-50s180-140 360-100 300 100 480 40"/>
-          <path d="M-50 500c220-90 300 10 460-50s180-140 360-100 300 100 480 40"/>
-          <path d="M-50 460c240-100 320 0 480-60s160-130 340-90 320 90 480 30"/>
-          <path d="M-50 420c240-100 320 0 480-60s160-130 340-90 320 90 480 30"/>
-          <ellipse cx="1000" cy="180" rx="150" ry="70"/><ellipse cx="1000" cy="180" rx="100" ry="44"/><ellipse cx="1000" cy="180" rx="50" ry="20"/>
-        </g>
-      </svg>
+      <div class="hero__arch-bg" aria-hidden="true" data-parallax="0.12"></div>
 
-      <div class="hero__top">
-        <div class="hero__meta reveal">
-          <span class="hero__tag">Portfólio</span>
-          <p><strong>Cirurgiã-dentista</strong><br>Odontologia estética e digital · CRO-XX 00000</p>
+      <div class="hero__text">
+        <p class="hero__eyebrow reveal"><span></span>Odontologia estética &amp; reabilitação oral</p>
+        <h1 class="hero__name reveal">Dra. Tayna <em>Decot</em></h1>
+        <p class="hero__quote reveal">“Um sorriso bonito é aquele que continua parecendo seu.”</p>
+        <p class="hero__lead reveal">Atendimento individual, com hora marcada e tempo para ouvir você. Cada tratamento é planejado com delicadeza, técnica e atenção aos detalhes.</p>
+        <div class="hero__cta reveal">
+          <a class="btn-classic" href="#contato">Agendar consulta</a>
+          <a class="link-classic" href="#sobre">Conheça a doutora <span aria-hidden="true">→</span></a>
         </div>
-        <div class="hero__meta hero__meta--right reveal">
-          <p>(2026)<br>Selecionados: lentes, clareamento, implantes</p>
-        </div>
-      </div>
-
-      <div class="hero__word" aria-hidden="true" data-parallax="0.16">TAYNA DECOT</div>
-      <div class="hero__person" data-parallax-person>
-        <!-- Coloque aqui a foto da Dra. recortada (PNG sem fundo): assets/img/tayna.png -->
-        <img src="assets/img/tayna.png" alt="Dra. Tayna Decot" onerror="this.parentElement.classList.add('is-empty'); this.remove()">
-        <div class="hero__placeholder" aria-hidden="true"><span>Foto recortada (PNG sem fundo)<br><small>assets/img/tayna.png</small></span></div>
-      </div>
-      <div class="hero__word hero__word--outline" aria-hidden="true" data-parallax="0.16">TAYNA DECOT</div>
-
-      <div class="implant" aria-hidden="true">
-        <svg viewBox="-30 0 320 360">
-          <defs>
-            <radialGradient id="crown" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#eef3f4"/><stop offset="1" stop-color="#b9c8cb"/></radialGradient>
-            <linearGradient id="metal" x1="0" x2="1"><stop offset="0" stop-color="#5d666a"/><stop offset=".35" stop-color="#e6ecee"/><stop offset=".6" stop-color="#9aa4a8"/><stop offset="1" stop-color="#474f53"/></linearGradient>
-            <linearGradient id="gold" x1="0" x2="1"><stop offset="0" stop-color="#8c969a"/><stop offset=".45" stop-color="#f4f7f8"/><stop offset="1" stop-color="#6c767a"/></linearGradient>
-          </defs>
-          <g transform="rotate(28 130 180)">
-            <g class="implant__screw">
-              <rect x="104" y="176" width="52" height="150" rx="10" fill="url(#metal)"/>
-              <g fill="none" stroke="#3f474b" stroke-opacity=".55" stroke-width="3"><path d="M100 190l60 8M100 206l60 8M100 222l60 8M100 238l60 8M100 254l60 8M100 270l60 8M100 286l60 8M104 302l52 8"/></g>
-              <path d="M110 326h40l-20 22z" fill="#5d666a"/>
-            </g>
-            <rect x="112" y="150" width="36" height="34" rx="6" fill="url(#gold)"/>
-            <path d="M130 30c-18-16-70-22-80 16-8 30 6 52 14 78 6 22 18 36 40 36h52c22 0 34-14 40-36 8-26 22-48 14-78-10-38-62-32-80-16z" fill="url(#crown)"/>
-            <path d="M92 60c10-10 30-12 40-4" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".9"/>
-          </g>
-        </svg>
-        <span class="implant__ring"></span>
-        <span class="implant__pin implant__pin--a"></span>
-      </div>
-      <div class="chip glass float"><span class="dot"></span>Smile design 3D</div>
-
-      <div class="hero__bottom">
-        <div class="hero__intro">
-          <h1 class="hero__title split">Sorrisos desenhados com precisão digital.</h1>
-          <div class="hero__cta reveal">
-            <a class="btn btn--light magnetic" href="#contato">Agendar avaliação
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-            <a class="btn btn--outline" href="#tratamentos">Ver trabalhos</a>
-          </div>
-        </div>
-
-        <a href="#sobre" class="scroll-cue" aria-label="Rolar para Sobre">
-          <span class="scroll-cue__ring"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="circ" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0"/></defs><text><textPath href="#circ">role para explorar · role para explorar · </textPath></text></svg></span>
-          <svg class="scroll-cue__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
-        </a>
-
-        <ul class="hero__stats reveal">
-          <li><strong><span data-count="8">0</span>+</strong><span class="stat-label">anos de experiência</span></li>
-          <li><strong><span data-count="1500">0</span>+</strong><span class="stat-label">sorrisos transformados</span></li>
-          <li><strong><span data-count="12">0</span></strong><span class="stat-label">tratamentos oferecidos</span></li>
+        <ul class="hero__creds reveal">
+          <li><small>Registro</small>CRO-XX 00000</li>
+          <li><small>Atendimento</small>Particular</li>
+          <li><small>Consultas</small>Com hora marcada</li>
         </ul>
       </div>
+
+      <figure class="hero__portrait reveal">
+        <div class="arch-frame" aria-hidden="true"></div>
+        <div class="arch" data-parallax-person>
+          <!-- Foto da Dra. (vertical): assets/img/tayna.jpg -->
+          <img src="assets/img/tayna.jpg" alt="Dra. Tayna Decot em seu consultório" onerror="this.parentElement.classList.add('is-empty'); this.remove()">
+          <div class="arch__empty" aria-hidden="true"><span class="arch__mono">T<em>D</em></span><small>Foto vertical<br>assets/img/tayna.jpg</small></div>
+        </div>
+        <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
+          <defs><path id="seal-path" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs>
+          <circle cx="60" cy="60" r="58" class="seal__bg"/>
+          <circle cx="60" cy="60" r="33" class="seal__line"/>
+          <text class="seal__text"><textPath href="#seal-path">Dra. Tayna Decot · Odontologia Estética · </textPath></text>
+          <text x="60" y="68" text-anchor="middle" class="seal__mono">TD</text>
+        </svg>
+        <figcaption class="signature">Tayna Decot</figcaption>
+      </figure>
+
+      <a href="#sobre" class="hero__scroll" aria-label="Rolar para Sobre"><span>Role</span><i></i></a>
     </section>
     <!-- MARQUEE -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Lentes de contato dental</span><i></i><span>Clareamento</span><i></i><span>Implantes</span><i></i><span>Alinhadores invisíveis</span><i></i><span>Harmonização orofacial</span><i></i><span>Smile design</span><i></i>
-        <span>Lentes de contato dental</span><i></i><span>Clareamento</span><i></i><span>Implantes</span><i></i><span>Alinhadores invisíveis</span><i></i><span>Harmonização orofacial</span><i></i><span>Smile design</span><i></i>
+        <span>Lentes de contato dental</span><i></i><span>Clareamento</span><i></i><span>Implantes</span><i></i><span>Alinhadores invisíveis</span><i></i><span>Harmonização orofacial</span><i></i><span>Reabilitação oral</span><i></i>
+        <span>Lentes de contato dental</span><i></i><span>Clareamento</span><i></i><span>Implantes</span><i></i><span>Alinhadores invisíveis</span><i></i><span>Harmonização orofacial</span><i></i><span>Reabilitação oral</span><i></i>
       </div>
     </div>
 
