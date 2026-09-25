@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dra. Tayna Decot — Odontologia Estética Digital</title>
+  <meta name="description" content="Dra. Tayna Decot — odontologia estética com planejamento digital: lentes de contato dental, clareamento, implantes e alinhadores invisíveis.">
+  <meta name="theme-color" content="#3d5c63">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Preloader: o contorno do dente se desenha -->
+  <div class="loader" aria-hidden="true">
+    <svg viewBox="0 0 120 140" class="loader__tooth">
+      <path d="M60 22c-10-10-38-14-44 10-5 20 6 34 10 52 4 18 5 40 14 40 9 0 8-30 20-30s11 30 20 30c9 0 10-22 14-40 4-18 15-32 10-52-6-24-34-20-44-10z"/>
+    </svg>
+    <span class="loader__name">Dra. Tayna Decot</span>
+  </div>
+
+  <div class="progress" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="nav" id="top">
+    <a href="#top" class="brand" aria-label="Dra. Tayna Decot — início">
+      <span class="brand__mark">TD</span>
+      <span class="brand__text"><strong>Tayna Decot</strong><small>odontologia estética</small></span>
+    </a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#processo">Processo digital</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+      </button>
+      <a class="btn btn--primary magnetic" href="#contato">Agendar avaliação</a>
+      <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <svg class="topo" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M-50 620c180-60 260 40 420-20s220-160 400-120 260 120 480 60"/>
+          <path d="M-50 580c180-60 260 40 420-20s220-160 400-120 260 120 480 60"/>
+          <path d="M-50 540c180-60 260 40 420-20s220-160 400-120 260 120 480 60"/>
+          <path d="M-50 500c200-80 280 20 440-40s200-150 380-110 280 110 480 50"/>
+          <path d="M-50 460c200-80 280 20 440-40s200-150 380-110 280 110 480 50"/>
+          <path d="M-50 420c220-90 300 10 460-50s180-140 360-100 300 100 480 40"/>
+          <path d="M-50 380c220-90 300 10 460-50s180-140 360-100 300 100 480 40"/>
+          <path d="M-50 340c240-100 320 0 480-60s160-130 340-90 320 90 480 30"/>
+          <path d="M-50 300c240-100 320 0 480-60s160-130 340-90 320 90 480 30"/>
+          <path d="M-50 260c260-110 340-10 500-70s140-120 320-80 340 80 480 20"/>
+          <path d="M-50 220c260-110 340-10 500-70s140-120 320-80 340 80 480 20"/>
+        </g>
+      </svg>
+
+      <div class="hero__wordmark" aria-hidden="true" data-parallax="0.25">DECOT</div>
+
+      <div class="hero__grid">
+        <div class="hero__intro">
+          <p class="eyebrow reveal">Odontologia estética · Planejamento digital</p>
+          <h1 class="hero__title split">Seu sorriso, desenhado com precisão digital</h1>
+          <p class="hero__lead reveal">Sou a Dra. Tayna Decot. Uno tecnologia 3D, escaneamento intraoral e um olhar artístico para criar sorrisos naturais — planejados antes mesmo do primeiro procedimento.</p>
+          <div class="hero__cta reveal">
+            <a class="btn btn--primary magnetic" href="#contato">Agendar avaliação
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#tratamentos">Ver tratamentos</a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="portrait" data-tilt>
+            <!-- Substitua por uma foto real: coloque o arquivo em assets/img/tayna.jpg -->
+            <img src="assets/img/tayna.jpg" alt="Dra. Tayna Decot" onerror="this.remove()">
+            <div class="portrait__fallback" aria-hidden="true">
+              <svg viewBox="0 0 120 140"><path d="M60 22c-10-10-38-14-44 10-5 20 6 34 10 52 4 18 5 40 14 40 9 0 8-30 20-30s11 30 20 30c9 0 10-22 14-40 4-18 15-32 10-52-6-24-34-20-44-10z"/></svg>
+              <span>Sua foto aqui<br><small>assets/img/tayna.jpg</small></span>
+            </div>
+            <div class="scanline" aria-hidden="true"></div>
+          </div>
+          <div class="chip chip--a glass float"><span class="dot"></span>Escaneamento intraoral 3D</div>
+          <div class="chip chip--b glass float" style="--d:1.2s"><span class="dot"></span>Smile design digital</div>
+        </div>
+
+        <ul class="hero__stats glass reveal">
+          <li><strong><span data-count="8">0</span>+</strong><span class="stat-label">anos de experiência</span></li>
+          <li><strong><span data-count="1500">0</span>+</strong><span class="stat-label">sorrisos transformados</span></li>
+          <li><strong><span data-count="100">0</span>%</strong><span class="stat-label">planejamento digital</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Lentes de contato dental</span><i></i><span>Clareamento</span><i></i><span>Implantes</span><i></i><span>Alinhadores invisíveis</span><i></i><span>Harmonização orofacial</span><i></i><span>Smile design</span><i></i>
+        <span>Lentes de contato dental</span><i></i><span>Clareamento</span><i></i><span>Implantes</span><i></i><span>Alinhadores invisíveis</span><i></i><span>Harmonização orofacial</span><i></i><span>Smile design</span><i></i>
+      </div>
+    </div>
+
+    <!-- 01 SOBRE -->
+    <section class="section section--tint" id="sobre">
+      <div class="container two-col">
+        <div class="section__head">
+          <span class="index reveal">01</span>
+          <div class="about-card glass reveal" data-tilt>
+            <div class="about-card__ring"></div>
+            <div class="about-card__body">
+              <span class="about-card__cro">CRO-XX 00000</span>
+              <strong>Dra. Tayna Decot</strong>
+              <small>Cirurgiã-dentista · Estética e reabilitação oral</small>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 class="label reveal">Sobre a doutora</h2>
+          <p class="lead reveal">Cada sorriso é único. Por isso, meu trabalho começa ouvindo você e termina em um resultado que combina com seu rosto, sua personalidade e sua rotina.</p>
+          <div class="facts">
+            <div class="fact reveal"><h3>Missão</h3><p>Entregar estética com saúde: tratamentos minimamente invasivos, previsíveis e duradouros.</p></div>
+            <div class="fact reveal"><h3>Diferencial</h3><p>Você visualiza o novo sorriso em 3D antes de começar — sem surpresas, com total segurança.</p></div>
+            <div class="fact reveal"><h3>Formação</h3><p>Atualização constante em cursos e congressos de odontologia estética e digital.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 TRATAMENTOS -->
+    <section class="section" id="tratamentos">
+      <div class="container">
+        <div class="section__title">
+          <span class="index reveal">02</span>
+          <h2 class="display split">Tratamentos</h2>
+          <p class="reveal">Protocolos personalizados, do diagnóstico digital ao sorriso final.</p>
+        </div>
+        <div class="cards">
+          <article class="card reveal" data-tilt>
+            <span class="card__num">/01</span>
+            <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 8c-4-4-15-5-17 4-2 8 2 13 4 20s2 12 5 12 3-10 8-10 5 10 8 10 3-5 5-12 6-12 4-20c-2-9-13-8-17-4z"/><path d="M16 16c3 2 13 2 16 0"/></svg>
+            <h3>Lentes de contato dental</h3>
+            <p>Lâminas ultrafinas de porcelana que corrigem cor, forma e alinhamento com mínimo desgaste.</p>
+          </article>
+          <article class="card reveal" data-tilt>
+            <span class="card__num">/02</span>
+            <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="8"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4"/></svg>
+            <h3>Clareamento dental</h3>
+            <p>Técnicas de consultório e caseiras supervisionadas, com controle de sensibilidade.</p>
+          </article>
+          <article class="card reveal" data-tilt>
+            <span class="card__num">/03</span>
+            <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 6h20c0 8-4 12-10 12S14 14 14 6z"/><path d="M20 18v4h8v-4M18 26h12M19 30h10M20 34h8M22 38h4v4h-4z"/></svg>
+            <h3>Implantes</h3>
+            <p>Reabilitação com guia cirúrgico impresso em 3D: mais precisão e recuperação confortável.</p>
+          </article>
+          <article class="card reveal" data-tilt>
+            <span class="card__num">/04</span>
+            <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20c6-6 30-6 36 0-2 10-8 18-18 18S8 30 6 20z"/><path d="M12 22h24"/></svg>
+            <h3>Alinhadores invisíveis</h3>
+            <p>Ortodontia discreta e removível, com simulação digital do movimento de cada dente.</p>
+          </article>
+          <article class="card reveal" data-tilt>
+            <span class="card__num">/05</span>
+            <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6c-9 0-15 7-15 17 0 12 8 19 15 19s15-7 15-19C39 13 33 6 24 6z"/><path d="M17 30c4 4 10 4 14 0"/></svg>
+            <h3>Harmonização orofacial</h3>
+            <p>Equilíbrio entre sorriso e face, com naturalidade e respeito às suas proporções.</p>
+          </article>
+          <article class="card reveal" data-tilt>
+            <span class="card__num">/06</span>
+            <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6l15 6v10c0 10-7 17-15 20-8-3-15-10-15-20V12z"/><path d="M17 24l5 5 9-10"/></svg>
+            <h3>Prevenção e check-up</h3>
+            <p>Limpeza, diagnóstico por imagem e acompanhamento para manter o resultado por anos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 RESULTADOS -->
+    <section class="section section--dark" id="resultados">
+      <div class="container two-col two-col--center">
+        <div>
+          <span class="index reveal">03</span>
+          <h2 class="display split">Antes &amp; depois</h2>
+          <p class="lead reveal">Arraste para comparar. No planejamento digital, você enxerga o resultado antes de começar — e aprova cada detalhe.</p>
+          <p class="note reveal">Ilustração demonstrativa. Substitua pelas fotos reais de casos (com autorização dos pacientes).</p>
+        </div>
+        <div class="compare reveal" style="--pos:50%">
+          <div class="compare__img compare__img--before">
+            <svg viewBox="0 0 400 260" aria-hidden="true"><g class="teeth teeth--before"><rect x="40" y="90" width="44" height="80" rx="18"/><rect x="88" y="84" width="50" height="92" rx="20"/><rect x="142" y="78" width="56" height="104" rx="22"/><rect x="202" y="78" width="56" height="104" rx="22"/><rect x="262" y="84" width="50" height="92" rx="20"/><rect x="316" y="90" width="44" height="80" rx="18"/></g></svg>
+            <span class="tag">Antes</span>
+          </div>
+          <div class="compare__img compare__img--after">
+            <svg viewBox="0 0 400 260" aria-hidden="true"><g class="teeth teeth--after"><rect x="40" y="88" width="46" height="84" rx="20"/><rect x="90" y="82" width="50" height="96" rx="22"/><rect x="144" y="76" width="54" height="108" rx="24"/><rect x="202" y="76" width="54" height="108" rx="24"/><rect x="260" y="82" width="50" height="96" rx="22"/><rect x="314" y="88" width="46" height="84" rx="20"/></g></svg>
+            <span class="tag tag--right">Depois</span>
+          </div>
+          <div class="compare__handle" aria-hidden="true"><span></span></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 PROCESSO -->
+    <section class="section" id="processo">
+      <div class="container">
+        <div class="section__title">
+          <span class="index reveal">04</span>
+          <h2 class="display split">Processo digital</h2>
+          <p class="reveal">Quatro etapas, zero improviso.</p>
+        </div>
+        <ol class="timeline">
+          <li class="timeline__line" aria-hidden="true"><span></span></li>
+          <li class="step reveal"><span class="step__n">01</span><h3>Consulta e escuta</h3><p>Entendemos suas expectativas, histórico e o sorriso que você deseja.</p></li>
+          <li class="step reveal"><span class="step__n">02</span><h3>Escaneamento 3D</h3><p>Moldagem digital sem massa: rápida, confortável e milimetricamente precisa.</p></li>
+          <li class="step reveal"><span class="step__n">03</span><h3>Smile design</h3><p>Projetamos o novo sorriso no computador e você aprova antes de iniciar.</p></li>
+          <li class="step reveal"><span class="step__n">04</span><h3>Execução e cuidado</h3><p>Tratamento guiado pelo planejamento e acompanhamento após a entrega.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 05 FAQ -->
+    <section class="section section--tint" id="faq">
+      <div class="container two-col">
+        <div>
+          <span class="index reveal">05</span>
+          <h2 class="display split">Dúvidas frequentes</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal" open>
+            <summary>Lentes de contato dental desgastam os dentes?</summary>
+            <p>Na maioria dos casos o preparo é mínimo ou inexistente. O planejamento digital define exatamente o que é necessário para cada dente.</p>
+          </details>
+          <details class="reveal">
+            <summary>Quanto tempo dura um clareamento?</summary>
+            <p>Depende de hábitos como café, vinho e tabaco. Com manutenção orientada, o resultado se mantém por bastante tempo.</p>
+          </details>
+          <details class="reveal">
+            <summary>O escaneamento 3D é desconfortável?</summary>
+            <p>Não. Ele substitui a moldagem com massa por uma câmera intraoral: é rápido, sem gosto e sem ânsia.</p>
+          </details>
+          <details class="reveal">
+            <summary>Posso ver o resultado antes de começar?</summary>
+            <p>Sim. Com o smile design digital, você visualiza e aprova a proposta antes de qualquer procedimento.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section contact" id="contato">
+      <div class="container">
+        <div class="contact__panel glass reveal">
+          <div class="contact__glow" aria-hidden="true"></div>
+          <span class="eyebrow">Pronta para o seu novo sorriso?</span>
+          <h2 class="display split">Agende sua avaliação</h2>
+          <p class="lead">Atendimento com hora marcada. Responda pelo WhatsApp e receba seu horário.</p>
+          <div class="contact__cta">
+            <!-- Troque o número abaixo pelo WhatsApp do consultório -->
+            <a class="btn btn--primary btn--lg magnetic" href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Dra.%20Tayna!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+              Falar no WhatsApp
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+          <ul class="contact__info">
+            <li><small>Endereço</small><span>Rua Exemplo, 000 — Sala 00, Cidade/UF</span></li>
+            <li><small>Horário</small><span>Seg a Sex · 9h às 19h</span></li>
+            <li><small>E-mail</small><span>contato@drataynadecot.com.br</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> Dra. Tayna Decot · CRO-XX 00000</span>
+      <span>Responsável técnica: Dra. Tayna Decot</span>
+      <a href="#top">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
