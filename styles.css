@@ -76,7 +76,7 @@ img { display: block; max-width: 100%; }
 }
 .hero__photo img {
   /* foto um pouco mais distante: menor, apoiada embaixo à direita, com o topo esfumado */
-  position: absolute; right: 0; bottom: 0; height: 99%; width: auto; max-width: none;
+  position: absolute; right: -4%; bottom: -13%; height: 120%; width: auto; max-width: none;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 7%), linear-gradient(to right, transparent 0%, #000 34%);
   -webkit-mask-composite: source-in;
   mask-image: linear-gradient(to bottom, transparent 0%, #000 7%), linear-gradient(to right, transparent 0%, #000 34%);
