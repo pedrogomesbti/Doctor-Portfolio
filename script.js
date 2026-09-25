@@ -59,15 +59,21 @@
   // Rolagem: barra de progresso, parallax, nav que se esconde, timeline
   const progress = document.querySelector('.progress');
   const nav = document.querySelector('.nav');
-  const wordmark = document.querySelector('[data-parallax]');
+  const words = document.querySelectorAll('[data-parallax]');
+  const person = document.querySelector('[data-parallax-person]');
+  const hero = document.querySelector('.hero');
   const line = document.querySelector('.timeline__line span');
   const timeline = document.querySelector('.timeline');
   let lastY = 0, ticking = false;
   const onScroll = () => {
     const y = window.scrollY, max = document.body.scrollHeight - innerHeight;
     progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
-    if (!reduced && wordmark) wordmark.style.setProperty('--py', `${y * +wordmark.dataset.parallax}px`);
-    nav.classList.toggle('hide', y > lastY && y > 400 && !navLinks.classList.contains('open'));
+    if (!reduced && y < innerHeight * 1.5) {
+      words.forEach(w => w.style.setProperty('--py', `${y * +w.dataset.parallax}px`));
+      if (person) person.style.setProperty('--ppy', `${y * -.06}px`);
+    }
+    nav.classList.toggle('pre', innerWidth > 980 && y < hero.offsetHeight - 160);
+    nav.classList.toggle('hide', y > lastY && y > hero.offsetHeight && !navLinks.classList.contains('open'));
     lastY = y;
     if (line && timeline) {
       const r = timeline.getBoundingClientRect();
@@ -77,6 +83,8 @@
     ticking = false;
   };
   window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(onScroll); ticking = true; } }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  requestAnimationFrame(onScroll);
 
   // Link ativo
   const navLinks = document.querySelector('.nav__links');
