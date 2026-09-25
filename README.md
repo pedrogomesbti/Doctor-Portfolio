@@ -25,4 +25,9 @@ A animação do dente aparece na primeira visita; a navegação entre telas usa 
 
 ## Ainda falta
 - E-mail, endereço completo e horários (por enquanto as páginas indicam "Consulte pelo WhatsApp").
-- Fotos: `tayna.jpg` (tela inicial), `tayna-sobre.jpg`, `consultorio-1..3.jpg` e uma por área em `trat-{avaliacao,prevencao,restauracoes,clareamento,gengiva,cirurgia,proteses}.jpg`, todas em `assets/img/`.
+- Fotos: `tayna.jpg` (retrato para a tela inicial), `consultorio-1.jpg` (recepção) e as áreas sem foto em `trat-{restauracoes,clareamento,gengiva,cirurgia,proteses}.jpg`, em `assets/img/`.
+
+## Mídia já no site
+- `assets/img/caso-*.jpg`: casos enviados pela Dra. (seção Casos do consultório em Tratamentos).
+- `assets/video/*.mp4`: trechos de 8 s dos vídeos de atendimento (Sobre mim e Tratamentos), com capa `.jpg`.
+- Fundos dos botões da tela inicial: `assets/img/btn-*.jpg`.
